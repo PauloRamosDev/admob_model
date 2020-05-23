@@ -18,7 +18,7 @@ class Teste {
     ],
     [
       //hunter x hunter ep1
-      'https://r8---sn-uphcg51pa-bg0e.googlevideo.com/videoplayback?expire=1588291200&ei=MyaOXu3oFdelj-8P8Ke32AI&ip=179.35.49.173&id=68ec468339e8f6b1&itag=18&source=blogger&mh=B1&mm=31&mn=sn-uphcg51pa-bg0e&ms=au&mv=m&mvi=7&pcm2cms=yes&pl=21&usequic=no&susc=bl&mime=video/mp4&dur=1416.766&lmt=1317571211162633&mt=1586374116&sparams=expire,ei,ip,id,itag,source,susc,mime,dur,lmt&sig=AJpPlLswRQIhAIhUnD8hLAwhgJre1SEby25UtO7atf-oEiugkNv-1zzIAiAYTo5ppXwTMxwMpXS2auSsgE2qpgcCoQ-2_4rbCfrQmw%3D%3D&lsparams=mh,mm,mn,ms,mv,mvi,pcm2cms,pl,usequic&lsig=ALrAebAwRAIgMgjFzBAQqWsCm0ArQrXqEW0ScBSq7yrGtrR31eV2zOoCIGi-j4jYRQC5IqxgA85jkU4bo_0jF_IC72RXXN6iWToN&cpn=UN9ov_gR7vCcX5X3&c=WEB_EMBEDDED_PLAYER&cver=20200406',
+      'https://r4---sn-uphcg51pa-bg0z.googlevideo.com/videoplayback?expire=1590217927&ei=R1zIXpixCrn2zLUP0L2UkAc&ip=186.229.196.115&id=68ec468339e8f6b1&itag=18&source=blogger&mh=B1&mm=31&mn=sn-uphcg51pa-bg0z&ms=au&mv=m&mvi=3&pl=22&usequic=no&susc=bl&mime=video/mp4&dur=1416.766&lmt=1317571211162633&mt=1590189032&sparams=expire,ei,ip,id,itag,source,susc,mime,dur,lmt&sig=AOq0QJ8wRgIhAI4kHMZEz7OyQj7DI1864fZjsAIjJHKGQoO6zPXadQgKAiEAtHtR5Ytu6YVyzD4Yma3G64jiCp56WedBKgu5I7fitxs%3D&lsparams=mh,mm,mn,ms,mv,mvi,pl,usequic&lsig=AG3C_xAwRQIgFTdyqKvT_kqGhQjTUQiL3o2f-HcH7kes5wXowjzXs1ICIQChLhITCeGv25jaC3usu8AFf83b8FzMiGIVlK-MhPEqJQ%3D%3D&cpn=S2qZNlJ0Q7BUtnW1&c=WEB_EMBEDDED_PLAYER&cver=20200521',
       "https://3.bp.blogspot.com/-OvBj-4bsGbs/VC-gsAYKhnI/AAAAAAAAAx0/rfiPDRcoqr0/s1600/Hunter%2BX%2BHunter%2B2011.jpg",
       "Assistir HunterxHunter Online HD",
       '8.5',

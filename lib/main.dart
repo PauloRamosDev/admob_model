@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:admob_flutter_example/card_filme.dart';
 import 'package:admob_flutter_example/lista.dart';
+import 'package:admob_flutter_example/video_player.dart';
 import 'package:flutter/material.dart';
 
 import 'package:admob_flutter/admob_flutter.dart';
@@ -27,16 +28,16 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
 
-    rewardAd = AdmobReward(
-      //TODO CHAVE DO ADMOB REWARD PRODUCAO
-      adUnitId: 'ca-app-pub-3940256099942544/5224354917',
-      listener: (AdmobAdEvent event, Map<String, dynamic> args) {
-        if (event == AdmobAdEvent.closed) rewardAd.load();
-        handleEvent(event, args, 'reward');
-      },
-    );
-
-    rewardAd.load();
+//    rewardAd = AdmobReward(
+//      //TODO CHAVE DO ADMOB REWARD PRODUCAO
+//      adUnitId: 'ca-app-pub-3940256099942544/5224354917',
+//      listener: (AdmobAdEvent event, Map<String, dynamic> args) {
+//        if (event == AdmobAdEvent.closed) rewardAd.load();
+//        handleEvent(event, args, 'reward');
+//      },
+//    );
+//
+//    rewardAd.load();
   }
 
   void showSnackBar(String content) {
@@ -127,7 +128,12 @@ class _MyAppState extends State<MyApp> {
                       child: InkWell(
                         onTap: ()async{
                           if (await rewardAd.isLoaded) {
-//                            await rewardAd.show();
+                            await rewardAd.show();
+
+                            VideoPlayer(
+                              link: Teste.list[index][0],
+                            );
+
                           }
                         },
                         child: CardFilme(Teste.list[index][0],
@@ -153,36 +159,36 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
-  //retorno do admob
-  void handleEvent(
-      AdmobAdEvent event, Map<String, dynamic> args, String adType) {
-    switch (event) {
-      case AdmobAdEvent.loaded:
-        showSnackBar('New Admob $adType Ad loaded!');
-        break;
-      case AdmobAdEvent.opened:
-        showSnackBar('Admob $adType Ad opened!');
-        break;
-      case AdmobAdEvent.closed:
-        showSnackBar('Admob $adType Ad closed!');
-        break;
-      case AdmobAdEvent.failedToLoad:
-        showSnackBar('Admob $adType failed to load. :(');
-        break;
-      case AdmobAdEvent.rewarded:
-        print('VIDEO COMPESADO');
-        break;
-      case AdmobAdEvent.completed:
-        print('VIDEO COMPLETED');
-        showSnackBar('FELIZ');
-        break;
-      default:
-    }
-
-    @override
-    void dispose() {
-      rewardAd.dispose();
-      super.dispose();
-    }
-  }
+//  //retorno do admob
+//  void handleEvent(
+//      AdmobAdEvent event, Map<String, dynamic> args, String adType) {
+//    switch (event) {
+//      case AdmobAdEvent.loaded:
+//        showSnackBar('New Admob $adType Ad loaded!');
+//        break;
+//      case AdmobAdEvent.opened:
+//        showSnackBar('Admob $adType Ad opened!');
+//        break;
+//      case AdmobAdEvent.closed:
+//        showSnackBar('Admob $adType Ad closed!');
+//        break;
+//      case AdmobAdEvent.failedToLoad:
+//        showSnackBar('Admob $adType failed to load. :(');
+//        break;
+//      case AdmobAdEvent.rewarded:
+//        print('VIDEO COMPESADO');
+//        break;
+//      case AdmobAdEvent.completed:
+//        print('VIDEO COMPLETED');
+//        showSnackBar('FELIZ');
+//        break;
+//      default:
+//    }
+//
+//    @override
+//    void dispose() {
+//      rewardAd.dispose();
+//      super.dispose();
+//    }
+//  }
 }

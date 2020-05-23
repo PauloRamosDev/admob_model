@@ -1,3 +1,4 @@
+import 'package:admob_flutter_example/admod.dart';
 import 'package:admob_flutter_example/video_player.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -11,14 +12,30 @@ class CardFilme extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    var admob = AdMob();
     return InkWell(
       onTap: () async{
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => VideoPlayer(
-                      link: link,
-                    )));
+
+        print('filme');
+
+        var carregado = await admob.rewardAd.isLoaded;
+
+        print(carregado);
+
+        if(carregado){
+          admob.rewardAd.show();
+        }else{
+          admob.rewardAd.load();
+        }
+
+
+//        Navigator.push(
+//            context,
+//            MaterialPageRoute(
+//                builder: (context) => VideoPlayer(
+//                      link: link,
+//                    )));
       },
       child: SizedBox(
         height: 300,
