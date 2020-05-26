@@ -1,6 +1,7 @@
 import 'dart:developer';
 import 'dart:io';
 
+import 'package:admob_flutter_example/admod.dart';
 import 'package:admob_flutter_example/card_filme.dart';
 import 'package:admob_flutter_example/lista.dart';
 import 'package:admob_flutter_example/video_player.dart';
@@ -11,7 +12,7 @@ import 'package:admob_flutter/admob_flutter.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   //TODO MINHA CHAVE ADMOB PRODUCAO
-  Admob.initialize('ca-app-pub-3940256099942544~3347511713');
+  Admob.initialize('ca-app-pub-1162287445258667~1596144086');
   runApp(MyApp());
 }
 
@@ -28,16 +29,26 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
 
-//    rewardAd = AdmobReward(
-//      //TODO CHAVE DO ADMOB REWARD PRODUCAO
+    rewardAd = AdmobReward(
+      //TODO CHAVE DO ADMOB REWARD PRODUCAO
 //      adUnitId: 'ca-app-pub-3940256099942544/5224354917',
-//      listener: (AdmobAdEvent event, Map<String, dynamic> args) {
-//        if (event == AdmobAdEvent.closed) rewardAd.load();
-//        handleEvent(event, args, 'reward');
-//      },
-//    );
-//
-//    rewardAd.load();
+      adUnitId: 'ca-app-pub-1162287445258667/4324295495',
+      listener: (AdmobAdEvent event, Map<String, dynamic> args) {
+        print('ADMOBREWARD STATUS $event');
+        if (event == AdmobAdEvent.closed) rewardAd.load();
+        handleEvent(event, args, 'reward');
+      },
+    );
+
+    rewardAd.load();
+
+//    AdMob().rewardAd.load();
+  }
+
+  @override
+  void dispose() {
+    rewardAd.dispose();
+    super.dispose();
   }
 
   void showSnackBar(String content) {
@@ -56,9 +67,9 @@ class _MyAppState extends State<MyApp> {
       ),
       home: Scaffold(
         key: scaffoldState,
-        appBar: AppBar(
-          title: const Text('WHAT! MOVIE'),
-        ),
+//        appBar: AppBar(
+//          title: const Text('WHAT! MOVIE'),
+//        ),
         bottomNavigationBar: Builder(
           builder: (BuildContext context) {
             return Container(
@@ -83,6 +94,7 @@ class _MyAppState extends State<MyApp> {
                             if (await rewardAd.isLoaded) {
                               rewardAd.show();
                             } else {
+                              rewardAd.load();
                               showSnackBar("Reward ad is still loading...");
                             }
                           },
@@ -109,7 +121,7 @@ class _MyAppState extends State<MyApp> {
             snap: false,
             expandedHeight: 200,
             flexibleSpace: const FlexibleSpaceBar(
-              title: Text('WHAT VIDEO'),
+              title: Text('WHAT! VIDEO'),
             ),
             actions: <Widget>[
               IconButton(
@@ -120,20 +132,33 @@ class _MyAppState extends State<MyApp> {
                 },
               ),
             ]),
+        SliverList(
+          delegate: SliverChildListDelegate(
+            [
+              Container(
+                height: 100,
+                width: 100,
+                child: Center(
+                  child: Text('Novos Videos'),
+                ),
+                color: Colors.pink,
+              ),
+            ],
+          ),
+        ),
         SliverGrid.count(
             childAspectRatio: 0.65,
             children: List.generate(
                 Teste.list.length,
                 (index) => Center(
                       child: InkWell(
-                        onTap: ()async{
+                        onTap: () async {
                           if (await rewardAd.isLoaded) {
-                            await rewardAd.show();
+                            rewardAd.show();
 
                             VideoPlayer(
                               link: Teste.list[index][0],
                             );
-
                           }
                         },
                         child: CardFilme(Teste.list[index][0],
@@ -145,7 +170,7 @@ class _MyAppState extends State<MyApp> {
           delegate: SliverChildListDelegate(
             [
               Container(
-                height: 100,
+                height: 500,
                 width: 100,
                 child: Center(
                   child: Text('Categorias'),
@@ -159,6 +184,31 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
+  //retorno do admob
+  void handleEvent(
+      AdmobAdEvent event, Map<String, dynamic> args, String adType) {
+    switch (event) {
+      case AdmobAdEvent.loaded:
+        print('New Admob $adType Ad loaded!');
+        break;
+      case AdmobAdEvent.opened:
+        print('Admob $adType Ad opened!');
+        break;
+      case AdmobAdEvent.closed:
+        print('Admob $adType Ad closed!');
+        break;
+      case AdmobAdEvent.failedToLoad:
+        print('Admob $adType failed to load. :(');
+        break;
+      case AdmobAdEvent.rewarded:
+        print('Admob $adType VIDEO COMPESADO');
+        break;
+      case AdmobAdEvent.completed:
+        print('Admob $adType VIDEO COMPLETED');
+        break;
+      default:
+    }
+  }
 //  //retorno do admob
 //  void handleEvent(
 //      AdmobAdEvent event, Map<String, dynamic> args, String adType) {
@@ -185,10 +235,6 @@ class _MyAppState extends State<MyApp> {
 //      default:
 //    }
 //
-//    @override
-//    void dispose() {
-//      rewardAd.dispose();
-//      super.dispose();
-//    }
+
 //  }
 }

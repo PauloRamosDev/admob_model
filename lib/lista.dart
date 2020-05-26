@@ -2,7 +2,7 @@ class Teste {
   static const list = [
     [
       //big bang teoria
-      'https://r8---sn-uphcg51pa-bg0e.googlevideo.com/videoplayback?expire=1588291200&ei=JhKOXrzsA4XyzLUPsdeYkAE&ip=179.35.49.173&id=63c649fcb42d3494&itag=18&source=blogger&mh=Gy&mm=31&mn=sn-uphcg51pa-bg0e&ms=au&mv=m&mvi=7&pcm2cms=yes&pl=21&usequic=no&susc=bl&mime=video/mp4&dur=1210.038&lmt=1530233033615277&mt=1586368954&sparams=expire,ei,ip,id,itag,source,susc,mime,dur,lmt&sig=AJpPlLswRgIhAKCRfaDbkZlNO8q3eq4mTD8qdijMfPZVmu6RMcIab6aWAiEA8X7hx8MbkiFy_tGaVI7vIgoeZs0YU5Ntl-8z60vTcmQ%3D&lsparams=mh,mm,mn,ms,mv,mvi,pcm2cms,pl,usequic&lsig=ALrAebAwRAIgSfaxTRaKnhTayJDGTt465eSSKlUoY-Dvh9mjW_qM0CECICa6Ny9-SxLe0Y9Ahl5YzHNW-7-QF2K_h5q8gfXAhi6Y&cpn=6kh8zmYou8bFGWsA&c=WEB_EMBEDDED_PLAYER&cver=20200406',
+      'https://firebasestorage.googleapis.com/v0/b/mercado-super-pratico.appspot.com/o/Filme%2FO.Rei.Leao.2019.720p.BluRay.x264-DUAL.COMANDOTORRENTS.COM.mkv?alt=media&token=522265ad-ec1c-4704-a1e0-a0a5e21b5d54',
       "https://filmesonlinehd1.net/wp-content/uploads/2018/09/ooBGRQBdbGzBxAVfExiO8r7kloA-185x278.jpg",
       "Assistir Big Bang: A teoria",
       '5.7',
@@ -18,7 +18,7 @@ class Teste {
     ],
     [
       //hunter x hunter ep1
-      'https://r4---sn-uphcg51pa-bg0z.googlevideo.com/videoplayback?expire=1590217927&ei=R1zIXpixCrn2zLUP0L2UkAc&ip=186.229.196.115&id=68ec468339e8f6b1&itag=18&source=blogger&mh=B1&mm=31&mn=sn-uphcg51pa-bg0z&ms=au&mv=m&mvi=3&pl=22&usequic=no&susc=bl&mime=video/mp4&dur=1416.766&lmt=1317571211162633&mt=1590189032&sparams=expire,ei,ip,id,itag,source,susc,mime,dur,lmt&sig=AOq0QJ8wRgIhAI4kHMZEz7OyQj7DI1864fZjsAIjJHKGQoO6zPXadQgKAiEAtHtR5Ytu6YVyzD4Yma3G64jiCp56WedBKgu5I7fitxs%3D&lsparams=mh,mm,mn,ms,mv,mvi,pl,usequic&lsig=AG3C_xAwRQIgFTdyqKvT_kqGhQjTUQiL3o2f-HcH7kes5wXowjzXs1ICIQChLhITCeGv25jaC3usu8AFf83b8FzMiGIVlK-MhPEqJQ%3D%3D&cpn=S2qZNlJ0Q7BUtnW1&c=WEB_EMBEDDED_PLAYER&cver=20200521',
+      'https://firebasestorage.googleapis.com/v0/b/salao-87aa8.appspot.com/o/app-video%2FHunter%20x%20Hunter%20%E2%80%93%20Episodio%201%20%E2%80%93%20Um%20Menino%20Prepara-se%20Para%20Viajar%20%C3%97%20Deixando%20Para%20Tr%C3%A1s%20O%20Som%20Do%20Vento.mp4?alt=media&token=df1b39c1-7e81-4b41-91e6-e1f20152fbef',
       "https://3.bp.blogspot.com/-OvBj-4bsGbs/VC-gsAYKhnI/AAAAAAAAAx0/rfiPDRcoqr0/s1600/Hunter%2BX%2BHunter%2B2011.jpg",
       "Assistir HunterxHunter Online HD",
       '8.5',

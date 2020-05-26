@@ -1,6 +1,3 @@
-import 'package:admob_flutter_example/admod.dart';
-import 'package:admob_flutter_example/video_player.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CardFilme extends StatelessWidget {
@@ -12,24 +9,9 @@ class CardFilme extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    var admob = AdMob();
     return InkWell(
-      onTap: () async{
-
-        print('filme');
-
-        var carregado = await admob.rewardAd.isLoaded;
-
-        print(carregado);
-
-        if(carregado){
-          admob.rewardAd.show();
-        }else{
-          admob.rewardAd.load();
-        }
-
-
+      onTap: () {
+//        //navigator para o video
 //        Navigator.push(
 //            context,
 //            MaterialPageRoute(
@@ -61,14 +43,20 @@ class CardFilme extends StatelessWidget {
               ),
               Positioned(
                 child: Container(
-                  width: 90,
+                  width: 100,
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      nome,
-                      style: TextStyle(color: Colors.white, fontSize: 10),
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
+                    child: Container(
+                      padding: EdgeInsets.all(4),
+                      decoration: BoxDecoration(
+                          color: Colors.black54,
+                          borderRadius: BorderRadius.circular(8)),
+                      child: Text(
+                        nome,
+                        style: TextStyle(color: Colors.white, fontSize: 10),
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                      ),
                     ),
                   ),
                 ),
@@ -81,6 +69,4 @@ class CardFilme extends StatelessWidget {
       ),
     );
   }
-
 }
-
