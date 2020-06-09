@@ -25,7 +25,6 @@ class _VideoPlayerState extends State<VideoPlayer> {
     return Center(
       child: AwsomeVideoPlayer(
         widget.link,
-        onbrightness: ,
         onplay: (value) {
           print('play ${value.isPlaying}');
         },
