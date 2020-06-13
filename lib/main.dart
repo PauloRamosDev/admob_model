@@ -1,5 +1,5 @@
 import 'package:admob_flutter/admob_flutter.dart';
-import 'package:admob_flutter_example/admod.dart';
+import 'package:admob_flutter_example/admob.dart';
 import 'package:admob_flutter_example/card_filme.dart';
 import 'package:admob_flutter_example/lista.dart';
 import 'package:admob_flutter_example/video_player.dart';
